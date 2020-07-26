@@ -1,0 +1,5 @@
+/home/Nihaowa123/server_framework/build/CMakeFiles/rebuild_cache.dir
+/home/Nihaowa123/server_framework/build/CMakeFiles/edit_cache.dir
+/home/Nihaowa123/server_framework/build/CMakeFiles/test_config.dir
+/home/Nihaowa123/server_framework/build/CMakeFiles/changme.dir
+/home/Nihaowa123/server_framework/build/CMakeFiles/test_log.dir

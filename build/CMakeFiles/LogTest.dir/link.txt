@@ -1,0 +1,1 @@
+/usr/bin/c++   -rdynamic -O3 -g -std=c++11 -Wall -Wno-deprecated -Werror -Wno-unused-function  -rdynamic CMakeFiles/LogTest.dir/tests/log4J/test.cpp.o  -o ../bin/LogTest -Wl,-rpath,/home/Nihaowa123/server_framework/lib ../lib/libchangme.so 

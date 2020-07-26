@@ -1,0 +1,1 @@
+/usr/bin/c++ -fPIC  -rdynamic -O3 -g -std=c++11 -Wall -Wno-deprecated -Werror -Wno-unused-function  -shared -Wl,-soname,libchangme.so -o ../lib/libchangme.so CMakeFiles/changme.dir/src/base_framework/log4J/log.cpp.o CMakeFiles/changme.dir/src/base_framework/config/config.cpp.o CMakeFiles/changme.dir/src/base_framework/utility/utility.cpp.o 
