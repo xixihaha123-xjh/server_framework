@@ -3,6 +3,7 @@
 
 #include <memory>
 #include <sstream>
+#include "yaml-cpp/yaml.h"
 #include <boost/lexical_cast.hpp>
 #include "../../../src/base_framework/log4J/log.h"
 
@@ -14,7 +15,8 @@ public:
     ConfigVarBase(const std::string& name, const std::string& description = "")
                  : m_configname(name)
                  , m_configdescription(description) {
-                 }
+        std::transform(m_configname.begin(), m_configname.end(), m_configname.begin(), ::tolower);
+    }
 
     virtual ~ConfigVarBase() {}
     const std::string& GetName() const { return m_configname; }
@@ -68,7 +70,7 @@ private:
 
 class Config {
 public:
-    typedef std::map<std::string, ConfigVarBase::ptr> ConfigVarMap;
+    typedef std::map<std::string, ConfigVarBase::ptr> ConfigVarMap;  // 配置项的名称, 配置项指针
     // 返回对应的配置参数,如果参数名存在但是类型不匹配则返回nullptr
     template<class T>
     static typename ConfigVar<T>::ptr LookUp(const std::string& name, const T& defaultValue, const std::string& description = "")
@@ -103,6 +105,8 @@ public:
         return std::dynamic_pointer_cast<ConfigVar<T>>(it->second);
     }
 
+    static void LoadFromYaml(const YAML::Node& root);
+    static ConfigVarBase::ptr LookUpBase(const std::string& name);
 private:
     static ConfigVarMap s_configvarmap;
 };

@@ -118,7 +118,8 @@ https://github.com/jbeder/yaml-cpp/releases/tag/yaml-cpp-0.6.3
 
 ## 10配置系统02_yaml
 
-
+1. Yaml安装
+2. Yaml的使用方法
 
 ## 11配置系统03_yaml整合
 

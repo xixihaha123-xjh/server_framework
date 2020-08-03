@@ -122,7 +122,7 @@ public:
     };
 private:
     std::string m_pattern;
-    std::vector<FormatItem::ptr> m_items; 
+    std::vector<FormatItem::ptr> m_items;
 };
 
 // 日志输出地

@@ -248,3 +248,128 @@ vec.push_back(std::make_tuple(formatStr, fmt, 1));
 ## boost库
 
 1. boost::lexical_cast
+
+
+
+std::transform
+
+```c++
+std::transform(m_configname.begin(), m_configname.end(), m_configname.begin(), ::tolower);
+```
+
+
+
+## cmake使用
+
+(1) 
+
+![1595748788472](C:\Users\13919\AppData\Roaming\Typora\typora-user-images\1595748788472.png)
+
+![1595748901349](C:\Users\13919\AppData\Roaming\Typora\typora-user-images\1595748901349.png)
+
+![1595750089974](C:\Users\13919\AppData\Roaming\Typora\typora-user-images\1595750089974.png)
+
+
+
+
+
+# Linux崩溃问题解决思路：
+
+(1) 打开core文件选项，为问题复现做好准备，原则要求测试的服务器都需要打开core文件，
+
+1. 切杀掉daemon守护进程
+
+* 杀掉vmdaemon的方法：
+
+```shell
+kill -9 `pidof vmdaemon`
+```
+
+* 经常发现测试虽然杀掉了vmdaemon，但是一重启就又恢复了，把进程重命名就ok了
+
+2. 打开core选项的方法：
+
+*  ulimit -c unlimited 确保生成的core文件没有大小限制，如果要关闭core选项，则使用 ulimit -c 0就可以了
+*  ulimit -a 查看是否已打开core选项
+* Core文件要生成需要把ulimit -c unlimited放到 ~/.bash/profile中，这样才能生成 core文件，手工执行是没有用的，必须放到配置文件中
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

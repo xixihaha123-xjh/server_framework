@@ -1,5 +1,5 @@
 #!/bin/bash
-if [ $# != 0 ]; then
+if [ $# == 1 ]; then
     cd /home/Nihaowa123/server_framework/build
     make clean
     exit 0
@@ -17,3 +17,8 @@ echo "#####################################"
 echo
 echo
 ./test_config
+
+if [ $# == 2 ]; then
+    cd /home/Nihaowa123/server_framework/bin
+    gdb ./test_config
+fi
